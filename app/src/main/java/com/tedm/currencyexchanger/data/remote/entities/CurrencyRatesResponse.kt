@@ -1,6 +1,6 @@
 package com.tedm.currencyexchanger.data.remote.entities
 
-data class CurrencyRates(
+data class CurrencyRatesResponse(
     val base: String,
     val date: String,
     val rates: Rates,
