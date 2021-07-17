@@ -20,6 +20,9 @@ interface BalanceDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBalance(balance: Balance)
 
+    @Query("UPDATE balances SET sum = :sum WHERE currencyCode = :currencyCode")
+    fun updateBalance(sum: Double, currencyCode: String): LiveData<Balance>
+
     @Query("SELECT * FROM balances WHERE id = :balanceID")
     fun observeBalanceById(balanceID: Int): LiveData<Balance>
 }
