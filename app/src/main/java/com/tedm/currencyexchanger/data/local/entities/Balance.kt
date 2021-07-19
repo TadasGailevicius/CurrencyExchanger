@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "balances")
-class Balance (
+data class Balance (
     @PrimaryKey(autoGenerate = false)
     val id: Int,
     val sum: Double,
