@@ -36,34 +36,24 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/currency_recycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fillViewport="true"
-        android:scrollbars="none"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_my_balance">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/currency_recycler"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" />
-
-        </RelativeLayout>
-
-    </HorizontalScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_balance" />
 
     <TextView
         android:id="@+id/tv_my_balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
@@ -75,12 +65,13 @@
         android:id="@+id/tv_currency_exchange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
         android:text="@string/currency_exchange"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/currency_recycler" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_sell"
@@ -126,7 +117,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextNumberDecimal"
+            android:id="@+id/et_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -183,7 +174,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_receive_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+ 0.00"
@@ -199,8 +190,11 @@
 
     <Button
         android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
